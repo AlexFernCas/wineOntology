@@ -1,0 +1,808 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/uoc2023/SpanishWineOntology/"
+     xml:base="http://www.semanticweb.org/uoc2023/SpanishWineOntology/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:SpanishWineOntology="http://www.semanticweb.org/uoc2023/SpanishWineOntology#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology">
+        <rdfs:comment>Spanish Wine Quality
+
+Autor: Eric Alexandre Fernández Castro</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#sameAs -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#sameAs"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#hasGrapeType -->
+
+    <owl:ObjectProperty rdf:about="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#hasGrapeType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+        <rdfs:range rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#Grape_Type"/>
+        <rdfs:comment>Indicates the grape type of the wine.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasRegion -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasRegion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Winery"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Region"/>
+        <rdfs:comment>Indicates the winery&apos;s region</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine_Type"/>
+        <rdfs:comment>Type of wine</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasWinery -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasWinery">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#produces"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Winery"/>
+        <rdfs:comment>Indicates the winery of wine</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#produces -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#produces">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Winery"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+        <rdfs:comment>Indicates which wine the winery produces</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasPrice">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Price of wine</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasRating -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasRating">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Rating of wine</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasYear">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Year when wine was produced</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#Grape_Type -->
+
+    <owl:Class rdf:about="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#Grape_Type">
+        <rdfs:comment>Indicates the grapes type</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Andalucia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Andalucia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#South_Spain"/>
+        <rdfs:comment>Class containing the different regions of Andalucia.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Balearic_Islands -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Balearic_Islands">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Mediterranian"/>
+        <rdfs:comment>Class that contains the diferents regions of Baleric Islands</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Castilla_y_León -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Castilla_y_León">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Central_Spain"/>
+        <rdfs:comment>Class that contains the diferents regions of Castilla y León</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Catalonia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Catalonia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Mediterranian"/>
+        <rdfs:comment>Class that contains the diferents regions of Catalonia</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Cava -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Cava">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine_Type"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Sparklin_Wine"/>
+        <rdfs:comment>Class containing the instances of cava types</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Central_Spain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Central_Spain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Region"/>
+        <rdfs:comment>Class that contains the diferents regions of central Spain</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#La_Rioja -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#La_Rioja">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#North_Spain"/>
+        <rdfs:comment>Class containing the different regions of La Rioja</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Mediterranian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Mediterranian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Region"/>
+        <rdfs:comment>Class that contains the mediterranian regions of Spain</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Navarra -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Navarra">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#North_Spain"/>
+        <rdfs:comment>Class containing the different regions of Navarra</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#North_Spain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#North_Spain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Region"/>
+        <rdfs:comment>Class containing the different regions of northern Spain</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Red_Wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Red_Wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine_Type"/>
+        <rdfs:comment>Class containing the instances of red wine types</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Region -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Region">
+        <rdfs:comment>A region is an area of land that has common features. A region can be defined by natural or artificial features.</rdfs:comment>
+        <rdfs:sameAs>https://dbpedia.org/ontology/region</rdfs:sameAs>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Rose_Wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Rose_Wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine_Type"/>
+        <rdfs:comment>Class containing the instances of rose wine types.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#South_Spain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#South_Spain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Region"/>
+        <rdfs:comment>Class containing the different regions of southern Spain</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Sparklin_Wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Sparklin_Wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine_Type"/>
+        <rdfs:comment>Class containing the instances of sparkling wine types,</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Valencia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Valencia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Mediterranian"/>
+        <rdfs:comment>Class that contains the diferents regions of Valencia</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#White_Wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#White_Wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine_Type"/>
+        <rdfs:comment>Class containing the instances of white wine types.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#hasGrapeType"/>
+                <owl:allValuesFrom rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#Grape_Type"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine_Type"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasWinery"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Winery"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasPrice"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasRating"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasYear"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Wine is an alcoholic drink typically made from fermented grapes. Yeast consumes the sugar in the grapes and converts it to ethanol and carbon dioxide, releasing heat in the process. Different varieties of grapes and strains of yeasts are major factors in different styles of wine.</rdfs:comment>
+        <rdfs:sameAs>https://dbpedia.org/page/Wine</rdfs:sameAs>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine_Type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine_Type">
+        <rdfs:comment>Class containing the different types of Spanish wines</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Winery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Winery">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasRegion"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Region"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A winery is a building or property that produces wine, or a business involved in the production of wine, such as a wine company. Some wine companies own many wineries. Besides wine making equipment, larger wineries may also feature warehouses, bottling lines, laboratories, and large expanses of tanks known as tank farms. Wineries may have existed as long as 8,000 years ago.</rdfs:comment>
+        <rdfs:sameAs>https://dbpedia.org/page/Winery</rdfs:sameAs>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#Black_Grape -->
+
+    <owl:NamedIndividual rdf:about="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#Black_Grape">
+        <rdf:type rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#Grape_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#Red_Grape -->
+
+    <owl:NamedIndividual rdf:about="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#Red_Grape">
+        <rdf:type rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#Grape_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#White_Grape -->
+
+    <owl:NamedIndividual rdf:about="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#White_Grape">
+        <rdf:type rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#Grape_Type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Abadia_Retuerta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Abadia_Retuerta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Winery"/>
+        <SpanishWineOntology:hasRegion rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Sardón_del_Duero"/>
+        <SpanishWineOntology:produces rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Pago_Negralda"/>
+        <rdfs:comment>Winery located at Sardón del Duero and producer of Pago Negralda wine.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Allende -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Allende">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Winery"/>
+        <SpanishWineOntology:hasRegion rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Briones"/>
+        <rdfs:comment>Winery located at Briones (La Rioja) and producer of Martínez Rioja wine.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Baix_Empordà -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Baix_Empordà">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Catalonia"/>
+        <rdfs:comment>Region of Catalonia</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Briones -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Briones">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#La_Rioja"/>
+        <rdfs:comment>Town of La Rioja</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Martínez_Rioja -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Martínez_Rioja">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+        <SpanishWineOntology:hasType rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Rioja_White"/>
+        <SpanishWineOntology:hasWinery rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Allende"/>
+        <SpanishWineOntology:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">91.5</SpanishWineOntology:hasPrice>
+        <SpanishWineOntology:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</SpanishWineOntology:hasRating>
+        <SpanishWineOntology:hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2015</SpanishWineOntology:hasYear>
+        <rdfs:comment>Rioja white wine produced by Allende winery.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Pago_Negralda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Pago_Negralda">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+        <SpanishWineOntology:hasType rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Tempranillo"/>
+        <SpanishWineOntology:hasWinery rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Abadia_Retuerta"/>
+        <SpanishWineOntology:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">67.4</SpanishWineOntology:hasPrice>
+        <SpanishWineOntology:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.7</SpanishWineOntology:hasRating>
+        <SpanishWineOntology:hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2015</SpanishWineOntology:hasYear>
+        <rdfs:comment>Tempranillo wine produced by Abadia Retuerta winery.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Red -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Red">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Red_Wine"/>
+        <rdfs:comment>Type of wine also known as red</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Ribera_del_Duero_Red -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Ribera_del_Duero_Red">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Red_Wine"/>
+        <rdfs:comment>Type of red wine with denomination of origin</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Rioja_White -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Rioja_White">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#White_Wine"/>
+        <rdfs:comment>White wine with denomination of origin.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Sardón_del_Duero -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Sardón_del_Duero">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Castilla_y_León"/>
+        <rdfs:comment>Region of Castilla y León</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Selección_Especial -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Selección_Especial">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+        <SpanishWineOntology:hasType rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Red"/>
+        <SpanishWineOntology:hasWinery rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Clos_d&apos;Agón"/>
+        <SpanishWineOntology:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">93.5</SpanishWineOntology:hasPrice>
+        <SpanishWineOntology:hasRating rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.1</SpanishWineOntology:hasRating>
+        <SpanishWineOntology:hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2015</SpanishWineOntology:hasYear>
+        <rdfs:comment>Red white produced by Clos d&apos;Agón winery.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Tempranillo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Tempranillo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Red_Wine"/>
+        <rdfs:comment>Red wine produced with tempranillo grapes</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Verdejo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Verdejo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#White_Wine"/>
+        <rdfs:comment>White wine produced with white grapes.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uoc2023/SpanishWineOntology#Clos_d&apos;Agón -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Clos_d&apos;Agón">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Winery"/>
+        <SpanishWineOntology:hasRegion rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Baix_Empordà"/>
+        <SpanishWineOntology:produces rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Selección_Especial"/>
+        <rdfs:comment>Winery located at Baix Empordà and producer of Selección Especial wine.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#Grape_Type"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Region"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine_Type"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Winery"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Cava"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Red_Wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Rose_Wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#White_Wine"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Central_Spain"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Mediterranian"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#North_Spain"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#South_Spain"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Red_Wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Region"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Sparklin_Wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Winery"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Region"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Sparklin_Wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#White_Wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Winery"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Region"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine_Type"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Winery"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/uoc2023/SpanishWineOntology/wine">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Assign red grapes to red wine type</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology/wine"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasType"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology/wine"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Red"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#hasGrapeType"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology/wine"/>
+                        <swrl:argument2 rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#Red_Grape"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Assign white grapes to Rioja white</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology/wine"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasType"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology/wine"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Rioja_White"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#hasGrapeType"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology/wine"/>
+                        <swrl:argument2 rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#White_Grape"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Assignt white grapes to white wine</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Wine"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology/wine"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#hasType"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology/wine"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology#Tempranillo"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#hasGrapeType"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/uoc2023/SpanishWineOntology/wine"/>
+                        <swrl:argument2 rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#White_Grape"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
